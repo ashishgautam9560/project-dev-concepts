@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 public class RestTemplateConnectionPoolConfig {
 
 	@Bean
-	RestTemplate restTemplate(RestTemplateBuilder builder) {
+	RestTemplate restTemplateConnectionPool(RestTemplateBuilder builder) {
 
 		// Create HttpClient Connection Pool with maximum TCP connection as 120 and maximum TCP/service as 30
 		PoolingHttpClientConnectionManager poolingHttpClientConnectionManager = new PoolingHttpClientConnectionManager();
