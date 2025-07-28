@@ -27,24 +27,23 @@ public class RestTemplateConnectionPoolConfig {
 		// Connect Timeout - Time to establish a TCP connection to the remote host.
 		// Response Timeout - Time to wait for a server response after sending the request.
 		RequestConfig requestConfig = RequestConfig
-										.custom()
-										.setConnectionRequestTimeout(Timeout.ofSeconds(300))
-										.setConnectTimeout(Timeout.ofSeconds(300))
-										.setResponseTimeout(Timeout.ofSeconds(300))
-										.build();
+						.custom()
+						.setConnectionRequestTimeout(Timeout.ofSeconds(300))
+						.setConnectTimeout(Timeout.ofSeconds(300))
+						.setResponseTimeout(Timeout.ofSeconds(300))
+						.build();
 
 		
 		// Builds an **HttpClient (TCP Connection)** with the pooling and timeout configuration.
 		CloseableHttpClient closeableHttpClient = HttpClientBuilder
-													.create()
-													.setConnectionManager(poolingHttpClientConnectionManager)
-													.setDefaultRequestConfig(requestConfig)
-													.build();
+								.create()
+								.setConnectionManager(poolingHttpClientConnectionManager)
+								.setDefaultRequestConfig(requestConfig)
+								.build();
 
 		
 		// Wraps the custom HttpClient into a Spring-compatible ClientHttpRequestFactory.
-		HttpComponentsClientHttpRequestFactory httpComponentsClientHttpRequestFactory = 
-				new HttpComponentsClientHttpRequestFactory(closeableHttpClient);
+		HttpComponentsClientHttpRequestFactory httpComponentsClientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory(closeableHttpClient);
 
 		
 		// Creates the RestTemplate Bean
