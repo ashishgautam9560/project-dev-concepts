@@ -18,13 +18,12 @@ import lombok.RequiredArgsConstructor;
 public class ApplicationContextController {
 
 	private final ApplicationContext applicationContext;
-	
-	@GetMapping("/beans")
-    public List<String> getAllBeans() {
-        String[] beanNames = applicationContext.getBeanDefinitionNames();
-        Arrays.sort(beanNames);
-        return Arrays.asList(beanNames);
-    }	
 
+	@GetMapping("/beans")
+	public List<String> getAllBeans() {
+		String[] beanNames = applicationContext.getBeanDefinitionNames();
+		Arrays.sort(beanNames);
+		return Arrays.asList(beanNames);
+	}
 
 }
