@@ -7,3 +7,22 @@ management:
       exposure:
         include: beans
 
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306
+    username: root
+    password: 1234
+  output:
+    ansi:
+      enabled: ALWAYS
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core: DEBUG
+    
+
+    
+    

@@ -23,7 +23,6 @@ public class ApplicationContextController {
 
 	@Operation(summary = "It will provide all the beans present in the project", 
 			   description = "This is the description of Monitor Lock", 
-			   tags = {"Thread Controller" }, 
 			   responses = { 
 					  @ApiResponse(responseCode = "200", description = "Ok"),
 					  @ApiResponse(responseCode = "400", description = "Bad Request") 
