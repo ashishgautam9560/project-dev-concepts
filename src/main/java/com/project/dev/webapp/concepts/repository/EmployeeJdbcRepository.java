@@ -42,7 +42,7 @@ public class EmployeeJdbcRepository {
 	public List<EmployeeDto> getAllEmployeesRowMapper() {
 		String query = queriesXml.getProperty("getAllEmployeesQuery");
 		return namedParameterJdbcTemplate.query(query, (rs, rowNum) -> {
-			log.info("rowNum: {}", rowNum);
+			log.debug("rowNum: {}", rowNum);
 			EmployeeDto employeeDto = new EmployeeDto();
 			employeeDto.setEmpNo(rs.getString("emp_no"));
 			employeeDto.setBirthDate(rs.getDate("birth_date"));

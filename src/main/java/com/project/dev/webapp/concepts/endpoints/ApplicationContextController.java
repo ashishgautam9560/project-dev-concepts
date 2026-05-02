@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping(value = "application-context")
 @Tag(name = "Application Context Controller")
 @RequiredArgsConstructor
+@Transactional(propagation = Propagation.MANDATORY)
 public class ApplicationContextController {
 
 	private final ApplicationContext applicationContext;

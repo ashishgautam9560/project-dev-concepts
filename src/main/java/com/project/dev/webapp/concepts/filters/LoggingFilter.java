@@ -24,7 +24,7 @@ public class LoggingFilter implements Filter {
 		log.info("Request URL: " + httpServletRequest.getRequestURI());
 		log.info("Response Headers: " + httpServletResponse.getHeaderNames());
 
-		chain.doFilter(httpServletRequest, response);
+		chain.doFilter(httpServletRequest, httpServletResponse);
 	}
 
 }
